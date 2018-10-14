@@ -1,0 +1,33 @@
+{% extends "nav.html" %}
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
+
+{% endblock %}
+
+{% block contenido %}
+
+<section class="submenu">
+    <div class="nav-submenu">
+        <ul class="nav-list-submenu">
+            <li class="item-submenu">
+                <a href="/docente" class="">Principal</a>
+            </li>
+            <li class="item-submenu">
+                <a href="" class="">Agregar Grupo</a>
+            </li>
+            <li class="item-submenu">
+                <a href="">Agregar Alumnos</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="main-content">
+
+</section>
+
+{% endblock %}

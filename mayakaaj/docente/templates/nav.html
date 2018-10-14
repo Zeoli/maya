@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+    {% block css %}
+    {% endblock %}
+
+    <script type="text/javascript" src="{% static 'script/navbar.js' %}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+
+    <title>Panel de control del docente</title>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logotipo">
+        <img src="{% static 'icon/logo.png' %}" alt=""/>
+        <span>Mayakáaj</span>
+    </div>
+    <hr class="nav-line"/>
+    <nav class="navigation">
+        <ul>
+          <li>
+              <a href="/docente/cursos" onmouseover="hover(this, 'white-engranaje.png');" onmouseout="unhover(this, 'engranaje.png');">
+                  <img id="icon" class="nav-icon" src="{% static 'icon/engranaje.png' %}" alt=""/>
+                  <span>Cursos</span>
+              </a>
+          </li>
+          <li>
+              <a href="/docente/grupos" onmouseover="hover(this, 'white-group.png');" onmouseout="unhover(this, 'group.png');">
+                  <img id="icon" src="{% static 'icon/group.png' %}" alt=""/>
+                  <span>Grupos</span>
+              </a>
+          </li>
+          <li>
+              <a href="" onmouseover="hover(this, 'white-content.png');" onmouseout="unhover(this, 'content.png');">
+                  <img id="icon" src="{% static 'icon/content.png' %}" alt=""/>
+                  <span>Contenido</span>
+              </a>
+          </li>
+          <li>
+              <a href="" onmouseover="hover(this, 'white-test.png');" onmouseout="unhover(this, 'test.png');">
+                  <img id="icon" src="{% static 'icon/test.png' %}" alt=""/>
+                  <span>Examenes</span>
+              </a>
+          </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="contenido">
+    <header class="content-header">
+        <span class="title">{{ titulo_pagina }}</span>
+        <hr style=""/>
+    </header>
+    {% block contenido %}
+    {% endblock %}
+</main>
+
+</body>
+</html>

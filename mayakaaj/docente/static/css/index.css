@@ -1,0 +1,113 @@
+@font-face {
+    font-family: Civilization;
+    src: url(/static/fonts/Mayan.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.contenido {
+    height: 100%;
+    position: fixed;
+    right: 0;
+    width: 94%;
+}
+
+.content-header {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 13%;
+    padding: 2%;
+    width: 94%;
+}
+
+.logotipo {
+    background-color: #e8ebf1;
+    margin-bottom: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.logotipo img {
+    padding: 8px 16px 0 16px;
+    width: 100%;
+}
+
+.logotipo span {
+    width: 100%;
+}
+
+.main-header {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 6%;
+    z-index: 100;
+    background-color: #e8ebf1;
+    overflow-y: auto;
+}
+
+.navigation {
+    box-sizing: border-box;
+    display: block;
+    margin-top: 5%;
+    height: auto;
+    width: 100%;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navigation li {
+    box-sizing: border-box;
+}
+
+.navigation li a {
+    display: block;
+    font-size: 0.8em;
+    padding: 16px;
+    text-decoration: none;
+    align-content: center;
+    text-align: center;
+}
+
+.navigation li a img {
+    width: 90%;
+}
+
+.navigation li a span {
+    width: 100%;
+}
+
+/* Change the link color on hover */
+.navigation li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.title {
+    display: block;
+    font-family: Civilization;
+    font-size: 1.4em;
+    margin: 16px;
+    height: 90%;
+    text-align: left;
+    vertical-align: middle;
+}
+
