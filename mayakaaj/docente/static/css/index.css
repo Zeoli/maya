@@ -29,6 +29,7 @@ html, body {
     height: 13%;
     padding: 2%;
     width: 94%;
+    z-index: 100;
 }
 
 .logotipo {
