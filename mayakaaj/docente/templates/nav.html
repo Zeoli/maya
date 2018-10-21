@@ -15,7 +15,7 @@
     {% block scripts %}
     {% endblock %}
 
-    <title>Panel de control del docente</title>
+    <title>Panel del docente |{% block title%}{% endblock%}</title>
 </head>
 <body>
 
@@ -58,7 +58,7 @@
 <main class="contenido">
     <header class="content-header">
         <span class="title">{{ titulo_pagina }}</span>
-        <hr style=""/>
+        <hr >
     </header>
     {% block contenido %}
     {% endblock %}

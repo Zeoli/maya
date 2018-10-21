@@ -1,4 +1,4 @@
-from django.db import models
+from djongo import models
 
 class Alumno(models.Model):
     id_alumno = models.AutoField(primary_key=True)
