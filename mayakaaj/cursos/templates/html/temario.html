@@ -1,0 +1,70 @@
+{% extends "nav.html" %}
+
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/temario.css' %}"/>
+
+{% endblock %}
+
+{% block title%} Temario {% endblock%}
+
+  
+<body>
+
+    {% block contenido%}  
+        <section class="submenu">
+            <div class="nav-submenu">
+                <ul class="nav-list-submenu">
+                    <li class="item-submenu">
+                        <a href="/docente" class="">Principal</a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="" class="">Agregar Unidad</a>
+                                                      
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+<div class="main-content">     
+    
+
+        
+        {% for curso in Cursos %}
+        <!-- Proyecto -->
+        <ul> 
+          <li>{{curso.nombre}}</li>
+        </ul> 
+        {% endfor %}
+
+<br>
+        <ul>
+            
+            <li>Unidad 2</li>
+                  <ul> 
+                     <li>Leccion A</li> 
+                     <li>Leccion B</li> 
+                     <li>  <img src="/maya/mayakaaj/cursos/static/img/file.png" alt= "Error en imagen" height="15" width="15" > </a> Repaso de la unidad</li> 
+                 </ul > 
+            <li>Unidad 3</li>
+                <ul> 
+                    <li>Leccion A</li>      
+                   <li> <img src="/maya/mayakaaj/cursos/static/img/file.png" alt= "Error en imagen" height="15" width="15" > </a>Repaso de la unidad</li>  
+                </ul > 
+            <li>Unidad 4</li>
+                <ul> 
+                    <li>Leccion A</li>      
+                   <li> <img src="/maya/mayakaaj/cursos/static/img/file.png" alt= "Error en imagen" height="15" width="15" > </a>Repaso de la unidad</li>  
+                </ul > 
+           
+        </ul >
+           </div>
+            {% endblock%}
+
+        </body>
+  
+</html>
