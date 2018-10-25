@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
 <link rel="stylesheet" href="{% static 'css/temario.css' %}"/>
 
+<style>
+   
+    .unidad, .repaso{
+        padding-left: 4%;        
+    }
+    .leccion{
+        padding-left: 8%;        
+    }
+</style>
+
 {% endblock %}
 
 {% block title%} Temario {% endblock%}
@@ -23,7 +33,7 @@
                         <a href="/docente" class="">Principal</a>
                     </li>
                     <li class="item-submenu">
-                        <a href="" class="">Agregar Unidad</a>
+                        <a href="/docente/cursos/unidad" class="">Agregar Unidad</a>
                                                       
                     </li>
                 </ul>
@@ -32,37 +42,26 @@
 
 <div class="main-content">     
     
-
-        
-        {% for curso in Cursos %}
+    
+    {% for curso in Cursos %}
         <!-- Proyecto -->
         <ul> 
-          <li>{{curso.nombre}}</li>
-        </ul> 
-        {% endfor %}
-
+          <li>Curso.- {{curso.nombre}}</li>
+            {% for unidad in Unidad%}
+                {%if unidad.idCurso_id == curso.idCurso%}
+                <li class="unidad">Unidad.-  {{unidad.nombre}}</li>
+                    {% for leccion in Leccion%}
+                        {%if leccion.idUnidad_id == unidad.idUnidad%}
+                            <li class="leccion">Leccion.-  {{leccion.nombre}}</li>
+                        {% endif %}
+                    {% endfor %}
+                <li class="repaso">Repaso de la Unidad</li>
+                {% endif %}
+            {% endfor %}
+    {% endfor %}
+         </ul>  
 <br>
-        <ul>
-            
-            <li>Unidad 2</li>
-                  <ul> 
-                     <li>Leccion A</li> 
-                     <li>Leccion B</li> 
-                     <li>  <img src="/maya/mayakaaj/cursos/static/img/file.png" alt= "Error en imagen" height="15" width="15" > </a> Repaso de la unidad</li> 
-                 </ul > 
-            <li>Unidad 3</li>
-                <ul> 
-                    <li>Leccion A</li>      
-                   <li> <img src="/maya/mayakaaj/cursos/static/img/file.png" alt= "Error en imagen" height="15" width="15" > </a>Repaso de la unidad</li>  
-                </ul > 
-            <li>Unidad 4</li>
-                <ul> 
-                    <li>Leccion A</li>      
-                   <li> <img src="/maya/mayakaaj/cursos/static/img/file.png" alt= "Error en imagen" height="15" width="15" > </a>Repaso de la unidad</li>  
-                </ul > 
-           
-        </ul >
-           </div>
+</div>
             {% endblock%}
 
         </body>

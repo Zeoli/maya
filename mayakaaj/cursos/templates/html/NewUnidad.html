@@ -1,0 +1,77 @@
+{% extends "nav.html" %}
+
+<!-- {% url 'portafolio' %} -->
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
+
+<style>
+   
+</style>
+
+{% endblock %}
+
+{% block title%} Unidad {% endblock%}
+
+  
+<body>
+
+    {% block contenido%}  
+    <!--Submenu-->
+        <section class="submenu">
+            <div class="nav-submenu">
+                <ul class="nav-list-submenu">
+                    <li class="item-submenu">
+                        <a href="/docente" class="">Principal</a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="" class="">Agregar Leccion</a>
+                                                      
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--Contenido-->
+        <div class="main-content"> 
+    
+                <label>Curso </label> 
+                <select class="form-control">
+                    {% for curso in Cursos %}
+                        <option value="{{curso.idCurso}}}">{{curso.nombre}}</option>
+                    {%endfor%}
+                </select>
+                    <br>
+                <label>Nombre de la unidad </label> 
+                <input type="text" name="unidad">
+                    <br>    
+                    <hr>
+                <p> Lecciones </p>
+                <label>Titulo </label> 
+                    <input type="text" name="titulo"> <br>
+                <label> Descripción </label> 
+                    <input type="text" name="descripcion"> <br>
+                    <hr>
+                <p> Palabras Claves </p>
+                <label>palabra </label> 
+                    <input type="text" name="palabra"> <br>
+                <label> Significado </label> 
+                    <input type="text" name="significado"> <br>
+                <label> Imagen </label> 
+                    <button class="btn"> 
+                        <img src="../../../static/cursos/img/add.png" alt= "Error en imagen" height="15" width="15" > </a>
+                    Añadir imagen 
+                    </button> 
+                    <br>
+                    <button class="btn-save"> 
+                        <img src="../../../static/cursos/img/add.png" alt= "Error en imagen" height="15" width="15" > </a>
+                    Guardar 
+                    </button> 
+
+        </div>
+    {% endblock%}
+
+</body>
+  
+</html>
