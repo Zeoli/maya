@@ -9,7 +9,7 @@ class curso(models.Model):
     fechaFinalCurso = models.DateTimeField(default=datetime.now, verbose_name="Fecha de Fin")
     created = models.DateTimeField(auto_now_add=True,verbose_name="Fecha de creación")
     updated = models.DateTimeField(auto_now=True,verbose_name="Fecha de edición")
-
+    
     def __str__(self):
         return self.nombre
 

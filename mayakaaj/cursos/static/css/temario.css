@@ -3,9 +3,15 @@ li{
     padding: 1.5%;
     width:100%;            
     }
-.unidad li{
-    padding-left: 2%;
+
+.unidad {
+    padding-left: 4%;
+    color: red;
 }      
+
+.leccion{
+    color: blue;
+}
     .main-content li:hover{    
               opacity: 0.5;
     }
