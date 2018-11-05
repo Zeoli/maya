@@ -13,7 +13,7 @@
 
 {% endblock %}
 
-{% block title%} Unidad {% endblock%}
+{% block title%} Nueva Unidad {% endblock%}
 
   
 <body>
@@ -27,15 +27,23 @@
                         <a href="/docente" class="">Principal</a>
                     </li>
                     <li class="item-submenu">
-                        <a href="" class="">Agregar Leccion</a>
-                                                      
+                        <a href="/docente/cursos/leccion" class="">Agregar Leccion</a>                                                      
+                    </li>
+                    <li class="item-submenu">
+                        <a href="" class="">Agregar Examen</a>                                                      
                     </li>
                 </ul>
             </div>
         </section>
         <!--Contenido-->
         <div class="main-content"> 
-    
+                <h3>Creando una nueva unidad </h3>
+            
+                <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Guardar</button>
+                </form>
+            <!--
                 <label>Curso </label> 
                 <select class="form-control">
                     {% for curso in Cursos %}
@@ -68,7 +76,7 @@
                         <img src="../../../static/cursos/img/add.png" alt= "Error en imagen" height="15" width="15" > </a>
                     Guardar 
                     </button> 
-
+-->
         </div>
     {% endblock%}
 

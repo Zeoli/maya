@@ -16,7 +16,7 @@ class curso(models.Model):
 class leccion(models.Model):
     idLeccion = models.AutoField(primary_key=True)
     idUnidad =  models.ForeignKey('unidad', on_delete=models.CASCADE)
-    nombre = models.CharField(max_length=10)
+    nombre = models.CharField(max_length=50)
     tema = models.TextField()
     class Meta:
         #abstract = True
@@ -29,7 +29,7 @@ class leccion(models.Model):
 class unidad(models.Model):
     idUnidad = models.AutoField(primary_key=True)
     idCurso = models.ForeignKey('curso', on_delete=models.CASCADE ,verbose_name="Curso")
-    nombre = models.CharField(max_length=20,verbose_name="Nombre")
+    nombre = models.CharField(max_length=50,verbose_name="Nombre")
 
     class Meta:
         #abstract=True
@@ -37,6 +37,3 @@ class unidad(models.Model):
 
     def __str__(self):
         return self.nombre
-    
-    
-    

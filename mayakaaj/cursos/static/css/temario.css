@@ -11,7 +11,10 @@ li{
 
 .leccion{
     color: blue;
+    text-decoration:none;
 }
+
+
     .main-content li:hover{    
               opacity: 0.5;
     }

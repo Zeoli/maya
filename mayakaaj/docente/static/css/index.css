@@ -109,6 +109,6 @@ html, body {
     margin: 16px;
     height: 90%;
     text-align: left;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
 }
 

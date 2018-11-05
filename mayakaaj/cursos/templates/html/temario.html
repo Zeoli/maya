@@ -13,9 +13,12 @@
     .unidad, .repaso{
         padding-left: 4%;        
     }
-    .leccion{
-        padding-left: 8%;        
+    li .leccion{
+        padding-left: 8%;
+        text-decoration: none;        
     }
+    a {text-decoration: none;
+    text-decoration-line: none;}
 </style>
 
 {% endblock %}
@@ -33,9 +36,11 @@
                         <a href="/docente" class="">Principal</a>
                     </li>
                     <li class="item-submenu">
-                        <a href="/docente/cursos/unidad" class="">Agregar Unidad</a>
-                                                      
+                        <a href="/docente/cursos/unidad" class="">Agregar Unidad</a>                                                      
                     </li>
+                    <li class="item-submenu">
+                            <a href="/docente/cursos/leccion" class="">Agregar Leccion</a>                                                      
+                        </li>
                 </ul>
             </div>
         </section>
@@ -52,7 +57,9 @@
                 <li class="unidad">Unidad.-  {{unidad.nombre}}</li>
                     {% for leccion in Leccion%}
                         {%if leccion.idUnidad_id == unidad.idUnidad%}
-                            <li class="leccion">Leccion.-  {{leccion.nombre}}</li>
+                            <a href="/docente/cursos/lecciones">
+                                <li class="leccion">Leccion.-  {{leccion.nombre}}</li>
+                            </a>
                         {% endif %}
                     {% endfor %}
                 <li class="repaso">Repaso de la Unidad</li>

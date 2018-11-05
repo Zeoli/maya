@@ -1,0 +1,49 @@
+{% extends "nav.html" %}
+
+<!-- {% url 'portafolio' %} -->
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
+
+<style>
+   
+</style>
+
+{% endblock %}
+
+{% block title%} Nuevo Curso {% endblock%}
+
+  
+<body>
+
+    {% block contenido%}  
+    <!--Submenu-->
+        <section class="submenu">
+            <div class="nav-submenu">
+                <ul class="nav-list-submenu">
+                    <li class="item-submenu">
+                        <a href="/docente" class="">Principal</a>
+                    </li>
+                    <li class="item-submenu">
+                        <a href="/unidad" class="">Agregar Unidad</a>
+                                                      
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--Contenido-->
+        <div class="main-content"> 
+            <h3>Creando un curso </h3>
+            
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Guardar</button>
+            </form>
+        </div>
+    {% endblock%}
+
+</body>
+  
+</html>
