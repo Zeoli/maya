@@ -1,0 +1,66 @@
+{% extends "nav.html" %}
+
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/temario.css' %}"/>
+
+<style>
+    a{
+        text-decoration-line: none;
+    }
+    .unidad, .repaso{
+        padding-left: 4%;        
+    }
+    .leccion{
+        padding-left: 8%;        
+    }
+</style>
+
+{% endblock %}
+
+{% block title%} Unidades {% endblock%}
+
+  
+<body>
+
+    {% block contenido%}  
+        <section class="submenu">
+            <div class="nav-submenu">
+                <ul class="nav-list-submenu">
+                    <li class="item-submenu">
+                        <a href="/docente/cursos/temario" class="">Temario</a>                                                      
+                    </li>
+                    <li class="item-submenu">
+                        <a href="/docente/cursos/unidad" class="">Nueva Unidad</a>
+                    </li>
+                   
+               </ul>
+            </div>
+        </section>
+
+<div class="main-content">     
+        <ul> 
+                               
+                <br>
+                {% for unidad in unidad_list %}
+                    <a href="{% url 'detalleUnidad' unidad.idUnidad %}">
+                    <p class="unidad">Unidad.-  {{unidad.nombre}}</p>
+                    </a>   <br>
+                            
+                        {% if unidad %}
+                            <a href= "{% url 'deleteUnidad' unidad.idUnidad %}">Eliminar</a>
+                        {% endif %}
+                        <br>     <br> 
+                {% endfor %}
+            </ul>  
+
+</div>
+            {% endblock%}
+
+        </body>
+  
+</html>

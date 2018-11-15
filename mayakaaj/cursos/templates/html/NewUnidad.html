@@ -24,20 +24,14 @@
             <div class="nav-submenu">
                 <ul class="nav-list-submenu">
                     <li class="item-submenu">
-                        <a href="/docente" class="">Principal</a>
-                    </li>
-                    <li class="item-submenu">
-                        <a href="/docente/cursos/leccion" class="">Agregar Leccion</a>                                                      
-                    </li>
-                    <li class="item-submenu">
-                        <a href="" class="">Agregar Examen</a>                                                      
+                        <a href="/docente/cursos/temario" class="">Temario</a>                                                      
                     </li>
                 </ul>
             </div>
         </section>
         <!--Contenido-->
         <div class="main-content"> 
-                <h3>Creando una nueva unidad </h3>
+                
             
                 <form method="POST" class="post-form">{% csrf_token %}
                     {{ form.as_p }}

@@ -6,7 +6,10 @@
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-
+    <script type="text/javascript" src="{% static 'script/ckeditor-init.js' %}"></script>    
+    <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+   
+    
     {% block css %}
     {% endblock %}
 
@@ -34,23 +37,23 @@
               </a>
           </li>
           <li>
-              <a href="/docente/grupos" onmouseover="hover(this, 'white-group.png');" onmouseout="unhover(this, 'group.png');">
+              <a href="" onmouseover="hover(this, 'white-group.png');" onmouseout="unhover(this, 'group.png');">
                   <img id="icon" src="{% static 'icon/group.png' %}" alt=""/>
                   <span>Grupos</span>
               </a>
-          </li>
+          </li>          
           <li>
-              <a href="" onmouseover="hover(this, 'white-content.png');" onmouseout="unhover(this, 'content.png');">
-                  <img id="icon" src="{% static 'icon/content.png' %}" alt=""/>
+              <a href="/docente/actividades/contenido" onmouseover="hover(this, 'white-test.png');" onmouseout="unhover(this, 'test.png');">
+                  <img id="icon" src="{% static 'icon/test.png' %}" alt=""/>
                   <span>Contenido</span>
               </a>
           </li>
           <li>
-              <a href="" onmouseover="hover(this, 'white-test.png');" onmouseout="unhover(this, 'test.png');">
-                  <img id="icon" src="{% static 'icon/test.png' %}" alt=""/>
-                  <span>Examenes</span>
-              </a>
-          </li>
+            <a href="" onmouseover="hover(this, 'white-content.png');" onmouseout="unhover(this, 'content.png');">
+                <img id="icon" src="{% static 'icon/content.png' %}" alt=""/>
+                <span>Perfil</span>
+            </a>
+        </li>
         </ul>
     </nav>
 </header>

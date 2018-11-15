@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import pregunta,examen,actividad,tipoActividad,tipoPregunta,habilidad,diccionario,Multimedia
 
-# Register your models here.
+admin.site.register([pregunta,examen,actividad,tipoActividad,tipoPregunta,habilidad,diccionario,Multimedia])
+
+
+

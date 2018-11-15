@@ -36,11 +36,9 @@
                         <a href="/docente" class="">Principal</a>
                     </li>
                     <li class="item-submenu">
-                        <a href="/docente/cursos/unidad" class="">Agregar Unidad</a>                                                      
+                        <a href="/docente/cursos/unidades" class="">Unidades</a>                                                      
                     </li>
-                    <li class="item-submenu">
-                            <a href="/docente/cursos/leccion" class="">Agregar Leccion</a>                                                      
-                        </li>
+                    
                 </ul>
             </div>
         </section>
@@ -54,12 +52,12 @@
           <li>Curso.- {{curso.nombre}}</li>
             {% for unidad in Unidad%}
                 {%if unidad.idCurso_id == curso.idCurso%}
-                <li class="unidad">Unidad.-  {{unidad.nombre}}</li>
+                    <a href="{% url 'detalleUnidad' unidad.idUnidad %}">
+                    <li class="unidad">Unidad.-  {{unidad.nombre }}</li>
+                    </a>
                     {% for leccion in Leccion%}
                         {%if leccion.idUnidad_id == unidad.idUnidad%}
-                            <a href="/docente/cursos/lecciones">
-                                <li class="leccion">Leccion.-  {{leccion.nombre}}</li>
-                            </a>
+                            <p class="leccion">Nombre: {{leccion.nombre}}</p>                                        
                         {% endif %}
                     {% endfor %}
                 <li class="repaso">Repaso de la Unidad</li>

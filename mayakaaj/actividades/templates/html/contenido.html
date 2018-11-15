@@ -1,0 +1,65 @@
+{% extends "nav.html" %}
+
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/temario.css' %}"/>
+
+<style>
+   
+    .unidad, .repaso{
+        padding-left: 4%;        
+    }
+    li .leccion{
+        padding-left: 8%;
+        text-decoration: none;        
+    }
+    a {text-decoration: none;
+    text-decoration-line: none;}
+</style>
+
+{% endblock %}
+
+{% block title%} Contenido {% endblock%}
+
+  
+<body>
+
+    {% block contenido%}  
+        <section class="submenu">
+            <div class="nav-submenu">
+                <ul class="nav-list-submenu">
+                   
+                    <li class="item-submenu">
+                        <a href="/docente/actividades/actividades" class="">Actividades</a>                                                      
+                    </li>
+                    <li class="item-submenu">
+                        <a href="/docente/actividades/palabras" class="">Diccionario</a>                                                      
+                    </li>
+                    <li class="item-submenu">
+                        <a href="/docente/actividades/examenes" class="">Examenes</a>                                                      
+                    </li>
+                    <li class="item-submenu">
+                        <a href="/docente/cursos/leccion" class="">Preguntas</a>                                                      
+                    </li>
+                    <li class="item-submenu">
+                        <a href="/docente/actividades/addMultimedia" class="">Multimedia</a>                                                      
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+<div class="main-content">     
+    
+   
+</div>
+
+            {% endblock%}
+
+        </body>
+  
+</html>

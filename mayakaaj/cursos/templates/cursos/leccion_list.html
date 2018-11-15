@@ -1,0 +1,73 @@
+{% extends "nav.html" %}
+
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/temario.css' %}"/>
+
+<style>
+   
+    .unidad, .repaso{
+        padding-left: 4%;        
+    }
+    .leccion{
+        padding-left: 8%;        
+    }
+</style>
+
+{% endblock %}
+
+{% block title%} Lecciones {% endblock%}
+
+  
+<body>
+
+    {% block contenido%}  
+        <section class="submenu">
+            <div class="nav-submenu">
+                <ul class="nav-list-submenu">
+                    <li class="item-submenu">
+                        <a href="/docente/cursos/temario" class="">Temario</a>                                                      
+                    </li>
+                    <li class="item-submenu">
+                        <a href="/docente/cursos/leccion" class="">Nueva Leccion</a>
+                    </li>
+                   
+               </ul>
+            </div>
+        </section>
+
+<div class="main-content">     
+    
+     <!-- Proyecto -->
+        <ul> 
+            <h2 class="section-heading mb-4">{{Unidad}}</h2>
+            
+            <br>            
+            
+                {% for leccion in Leccion %}
+                    {%if leccion.idUnidad_id == Unidad.idUnidad%}
+                        <a href="{% url 'detalleLeccion' leccion.idLeccion %}">
+                        <p class="leccion">Nombre: {{leccion.nombre}}</p>
+                        </a>
+                        <br>
+                        <p class="leccion">Contenido:
+                             {{leccion.tema|safe|truncatewords:5 }}</p>
+                         
+                        <br>     
+                        <a href= "{% url 'deleteLeccion' leccion.idLeccion %}">Eliminar</a>
+                    {% endif %}
+                     
+                {% endfor %}
+
+        </ul>  
+<br>
+</div>
+            {% endblock%}
+
+        </body>
+  
+</html>

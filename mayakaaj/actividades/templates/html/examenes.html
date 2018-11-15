@@ -1,0 +1,63 @@
+{% extends "nav.html" %}
+
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/main_cursos.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/temario.css' %}"/>
+
+<style>
+   
+    .unidad, .repaso{
+        padding-left: 4%;        
+    }
+    li .leccion{
+        padding-left: 8%;
+        text-decoration: none;        
+    }
+    a {text-decoration: none;
+    text-decoration-line: none;}
+</style>
+
+{% endblock %}
+
+{% block title%} Actividades {% endblock%}
+
+  
+<body>
+
+    {% block contenido%}  
+        <section class="submenu">
+            <div class="nav-submenu">
+                <ul class="nav-list-submenu">
+                    <li class="item-submenu">
+                        <a href="/docente" class="">Principal</a>
+                    </li>
+                   <li class="item-submenu">
+                        <a href="" class="">Nuevo Examen</a>                                                      
+                    </li>
+                    <li class="item-submenu">
+                        <a href=""" class="">Eliminar Examen</a>                                                      
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+<div class="main-content">     
+   
+   
+    {% for examen in Examenes %}
+             
+ 
+    {% endfor%}
+
+</div>
+
+            {% endblock%}
+
+        </body>
+  
+</html>
